@@ -1,0 +1,12 @@
+C:\Code\Distributed-One-Time-Pad\Distributed One-Time Pad\OneTimePadDLL\obj\Debug\net6.0\OneTimePadDLL.csproj.AssemblyReference.cache
+C:\Code\Distributed-One-Time-Pad\Distributed One-Time Pad\OneTimePadDLL\obj\Debug\net6.0\OneTimePadDLL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Code\Distributed-One-Time-Pad\Distributed One-Time Pad\OneTimePadDLL\obj\Debug\net6.0\OneTimePadDLL.AssemblyInfoInputs.cache
+C:\Code\Distributed-One-Time-Pad\Distributed One-Time Pad\OneTimePadDLL\obj\Debug\net6.0\OneTimePadDLL.AssemblyInfo.cs
+C:\Code\Distributed-One-Time-Pad\Distributed One-Time Pad\OneTimePadDLL\obj\Debug\net6.0\OneTimePadDLL.csproj.CoreCompileInputs.cache
+C:\Code\Distributed-One-Time-Pad\Distributed One-Time Pad\OneTimePadDLL\bin\Debug\net6.0\OneTimePadDLL.deps.json
+C:\Code\Distributed-One-Time-Pad\Distributed One-Time Pad\OneTimePadDLL\bin\Debug\net6.0\OneTimePadDLL.dll
+C:\Code\Distributed-One-Time-Pad\Distributed One-Time Pad\OneTimePadDLL\bin\Debug\net6.0\OneTimePadDLL.pdb
+C:\Code\Distributed-One-Time-Pad\Distributed One-Time Pad\OneTimePadDLL\obj\Debug\net6.0\OneTimePadDLL.dll
+C:\Code\Distributed-One-Time-Pad\Distributed One-Time Pad\OneTimePadDLL\obj\Debug\net6.0\refint\OneTimePadDLL.dll
+C:\Code\Distributed-One-Time-Pad\Distributed One-Time Pad\OneTimePadDLL\obj\Debug\net6.0\OneTimePadDLL.pdb
+C:\Code\Distributed-One-Time-Pad\Distributed One-Time Pad\OneTimePadDLL\obj\Debug\net6.0\ref\OneTimePadDLL.dll

@@ -1,0 +1,93 @@
+﻿namespace OneTimePadDLL
+{
+    public class OneTimePadOperations
+    {
+
+        private readonly char[] CharacterLibrary = new char[37];
+
+        /// <summary>
+        /// In the future we should use Hexidecimal
+        /// </summary>
+        public OneTimePadOperations()
+        {
+            CharacterLibrary[0] = '.';
+            CharacterLibrary[1] = '1';
+            CharacterLibrary[2] = '2';
+            CharacterLibrary[3] = '3';
+            CharacterLibrary[4] = '4';
+            CharacterLibrary[5] = '5';
+            CharacterLibrary[6] = '6';
+            CharacterLibrary[7] = '7';
+            CharacterLibrary[8] = '8';
+            CharacterLibrary[9] = '9';
+            CharacterLibrary[10] = '0';
+            CharacterLibrary[11] = 'A';
+            CharacterLibrary[12] = 'B';
+            CharacterLibrary[13] = 'C';
+            CharacterLibrary[14] = 'D';
+            CharacterLibrary[15] = 'E';
+            CharacterLibrary[16] = 'F';
+            CharacterLibrary[17] = 'G';
+            CharacterLibrary[18] = 'H';
+            CharacterLibrary[19] = 'I';
+            CharacterLibrary[20] = 'J';
+            CharacterLibrary[21] = 'K';
+            CharacterLibrary[22] = 'L';
+            CharacterLibrary[23] = 'M';
+            CharacterLibrary[24] = 'N';
+            CharacterLibrary[25] = 'O';
+            CharacterLibrary[26] = 'P';
+            CharacterLibrary[27] = 'Q';
+            CharacterLibrary[28] = 'R';
+            CharacterLibrary[29] = 'S';
+            CharacterLibrary[30] = 'T';
+            CharacterLibrary[31] = 'U';
+            CharacterLibrary[32] = 'V';
+            CharacterLibrary[33] = 'W';
+            CharacterLibrary[34] = 'X';
+            CharacterLibrary[35] = 'Y';
+            CharacterLibrary[36] = 'Z';
+
+
+        }
+
+        public char EnryptCypher(char TextToEncrypt, int AmountToShift)
+        {
+            char CypherText = PerformCypherShiftEncryption(TextToEncrypt,AmountToShift);
+
+
+
+            return CypherText;
+
+        }
+
+
+
+        /// <summary>
+        /// Performs the Cypher Shift, note that returning anything below 36 is bad and we 
+        /// should throw a note informing the user of the error.  Should limit to stock prices above $100
+        /// </summary>
+        /// <param name="AmountToShift"></param>
+        /// <returns></returns>
+        public char PerformCypherShiftEncryption(char StartingCharacter, int AmountToShift)
+        {
+
+               int StartingCharacterLocation = Array.IndexOf(CharacterLibrary, StartingCharacter);
+
+               int CypherPointer = StartingCharacterLocation;
+               for (int i = 0; i < AmountToShift; i++) 
+                {
+                    if (i != 37)
+                    {
+                        CypherPointer++;
+                    }
+                    else
+                    {
+                        CypherPointer = 0;
+                    }
+                }
+            return CharacterLibrary[CypherPointer];
+        }
+
+    }
+}

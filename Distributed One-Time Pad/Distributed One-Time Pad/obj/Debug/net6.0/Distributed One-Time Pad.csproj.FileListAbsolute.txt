@@ -1,0 +1,15 @@
+C:\Code\Distributed-One-Time-Pad\Distributed One-Time Pad\Distributed One-Time Pad\bin\Debug\net6.0\Distributed One-Time Pad.exe
+C:\Code\Distributed-One-Time-Pad\Distributed One-Time Pad\Distributed One-Time Pad\bin\Debug\net6.0\Distributed One-Time Pad.deps.json
+C:\Code\Distributed-One-Time-Pad\Distributed One-Time Pad\Distributed One-Time Pad\bin\Debug\net6.0\Distributed One-Time Pad.runtimeconfig.json
+C:\Code\Distributed-One-Time-Pad\Distributed One-Time Pad\Distributed One-Time Pad\bin\Debug\net6.0\Distributed One-Time Pad.dll
+C:\Code\Distributed-One-Time-Pad\Distributed One-Time Pad\Distributed One-Time Pad\bin\Debug\net6.0\Distributed One-Time Pad.pdb
+C:\Code\Distributed-One-Time-Pad\Distributed One-Time Pad\Distributed One-Time Pad\obj\Debug\net6.0\Distributed One-Time Pad.csproj.AssemblyReference.cache
+C:\Code\Distributed-One-Time-Pad\Distributed One-Time Pad\Distributed One-Time Pad\obj\Debug\net6.0\Distributed One-Time Pad.GeneratedMSBuildEditorConfig.editorconfig
+C:\Code\Distributed-One-Time-Pad\Distributed One-Time Pad\Distributed One-Time Pad\obj\Debug\net6.0\Distributed One-Time Pad.AssemblyInfoInputs.cache
+C:\Code\Distributed-One-Time-Pad\Distributed One-Time Pad\Distributed One-Time Pad\obj\Debug\net6.0\Distributed One-Time Pad.AssemblyInfo.cs
+C:\Code\Distributed-One-Time-Pad\Distributed One-Time Pad\Distributed One-Time Pad\obj\Debug\net6.0\Distributed One-Time Pad.csproj.CoreCompileInputs.cache
+C:\Code\Distributed-One-Time-Pad\Distributed One-Time Pad\Distributed One-Time Pad\obj\Debug\net6.0\Distributed One-Time Pad.dll
+C:\Code\Distributed-One-Time-Pad\Distributed One-Time Pad\Distributed One-Time Pad\obj\Debug\net6.0\refint\Distributed One-Time Pad.dll
+C:\Code\Distributed-One-Time-Pad\Distributed One-Time Pad\Distributed One-Time Pad\obj\Debug\net6.0\Distributed One-Time Pad.pdb
+C:\Code\Distributed-One-Time-Pad\Distributed One-Time Pad\Distributed One-Time Pad\obj\Debug\net6.0\Distributed One-Time Pad.genruntimeconfig.cache
+C:\Code\Distributed-One-Time-Pad\Distributed One-Time Pad\Distributed One-Time Pad\obj\Debug\net6.0\ref\Distributed One-Time Pad.dll
