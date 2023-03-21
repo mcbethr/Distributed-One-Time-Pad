@@ -7,7 +7,7 @@ namespace OneTimePadUnitTests
     {
         
         [TestMethod]
-        public void CheckCypherShift10FromA()
+        public void CheckCypherShift10FromAEncryption()
         {
 
             OneTimePadOperations OTPO = new OneTimePadOperations();
@@ -18,7 +18,7 @@ namespace OneTimePadUnitTests
         }
 
         [TestMethod]
-        public void CheckCypherShift27FromA() {
+        public void CheckCypherShift27FromAEncryption() {
 
             OneTimePadOperations OTPO = new OneTimePadOperations();
             char CypherShift = OTPO.PerformCypherShiftEncryption('A',27);
@@ -26,25 +26,38 @@ namespace OneTimePadUnitTests
 
         }
 
-        //[TestMethod]
-        public void CheckCypherShift35() {
+        [TestMethod]
+        public void CheckCypherChift10DecryptK() {
 
             OneTimePadOperations OTPO = new OneTimePadOperations();
-            int CypherShift = OTPO.PerformCypherShiftEncryption('A',35); ;
-            Assert.AreEqual(0, CypherShift);
+            int CypherShift = OTPO.PerformCypherShiftDecryption('K',10); ;
+            Assert.AreEqual('A', CypherShift);
 
         }
 
-        //[TestMethod]
-        public void CheckCypherShift2226()
+        [TestMethod]
+        public void CheckCypherShiftDecrypt()
         {
 
             OneTimePadOperations OTPO = new OneTimePadOperations();
-            int CypherShift = OTPO.PerformCypherShiftEncryption('A',226);
-            Assert.AreEqual(9, CypherShift);
+            int CypherShift = OTPO.PerformCypherShiftDecryption('.',27);
+            Assert.AreEqual('A', CypherShift);
 
         }
 
+        [TestMethod]
+        public void EncryptTextString()
+        {
+            string ToEncrypt = "CAT";  //Should Change CAT to DCW
+            
+            int[] ShiftArray = { 1, 2, 3 };
+
+            OneTimePadOperations OTPO = new OneTimePadOperations();
+            string? cyphertext = OTPO.EncryptMessage(ToEncrypt, ShiftArray);
+
+            Assert.AreEqual("DCW", cyphertext);
+
+        }
   
     }
 }

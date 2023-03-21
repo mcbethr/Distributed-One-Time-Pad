@@ -51,6 +51,22 @@
 
         }
 
+        public string? EncryptMessage(string message, int[] ShiftArray)
+        {
+            string? cypherText = null;
+            int i = 0;
+            foreach (char c in message)
+            {
+                char EncryptedText = EnryptCypher(c, ShiftArray[i]);
+                cypherText = cypherText + EncryptedText;
+                i++;
+            }
+
+            return cypherText;
+        }
+
+        //public string DecryptMessage
+
         public char EnryptCypher(char TextToEncrypt, int AmountToShift)
         {
             char CypherText = PerformCypherShiftEncryption(TextToEncrypt,AmountToShift);
@@ -75,9 +91,10 @@
                int StartingCharacterLocation = Array.IndexOf(CharacterLibrary, StartingCharacter);
 
                int CypherPointer = StartingCharacterLocation;
+               
                for (int i = 0; i < AmountToShift; i++) 
                 {
-                    if (i != 37)
+                    if (CypherPointer < CharacterLibrary.Length)
                     {
                         CypherPointer++;
                     }
@@ -87,6 +104,28 @@
                     }
                 }
             return CharacterLibrary[CypherPointer];
+        }
+
+        public char PerformCypherShiftDecryption(char StartingCharacter, int AmountToShift)
+        {
+
+            int StartingCharacterLocation = Array.IndexOf(CharacterLibrary, StartingCharacter);
+
+            int CypherPointer = StartingCharacterLocation;
+
+            for (int i = 0; i < AmountToShift; i++)
+            {
+                if (CypherPointer > 0)
+                {
+                    CypherPointer--;
+                }
+                else
+                {
+                    CypherPointer = 37;
+                }
+            }
+            return CharacterLibrary[CypherPointer];
+
         }
 
     }
