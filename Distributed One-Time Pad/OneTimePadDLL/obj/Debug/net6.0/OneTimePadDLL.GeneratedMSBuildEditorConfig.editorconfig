@@ -8,4 +8,4 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = OneTimePadDLL
-build_property.ProjectDir = C:\Code\Distributed-One-Time-Pad\Distributed One-Time Pad\OneTimePadDLL\
+build_property.ProjectDir = C:\code\Distributed-One-Time-Pad\Distributed One-Time Pad\OneTimePadDLL\

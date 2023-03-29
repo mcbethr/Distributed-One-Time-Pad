@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Code\\Distributed-One-Time-Pad\\Distributed One-Time Pad\\Distributed One-Time Pad\\Distributed One-Time Pad.csproj": {}
+    "C:\\code\\Distributed-One-Time-Pad\\Distributed One-Time Pad\\Distributed One-Time Pad\\Distributed One-Time Pad.csproj": {}
   },
   "projects": {
-    "C:\\Code\\Distributed-One-Time-Pad\\Distributed One-Time Pad\\Distributed One-Time Pad\\Distributed One-Time Pad.csproj": {
+    "C:\\code\\Distributed-One-Time-Pad\\Distributed One-Time Pad\\Distributed One-Time Pad\\Distributed One-Time Pad.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Code\\Distributed-One-Time-Pad\\Distributed One-Time Pad\\Distributed One-Time Pad\\Distributed One-Time Pad.csproj",
+        "projectUniqueName": "C:\\code\\Distributed-One-Time-Pad\\Distributed One-Time Pad\\Distributed One-Time Pad\\Distributed One-Time Pad.csproj",
         "projectName": "Distributed One-Time Pad",
-        "projectPath": "C:\\Code\\Distributed-One-Time-Pad\\Distributed One-Time Pad\\Distributed One-Time Pad\\Distributed One-Time Pad.csproj",
+        "projectPath": "C:\\code\\Distributed-One-Time-Pad\\Distributed One-Time Pad\\Distributed One-Time Pad\\Distributed One-Time Pad.csproj",
         "packagesPath": "C:\\Users\\ryanm\\.nuget\\packages\\",
-        "outputPath": "C:\\Code\\Distributed-One-Time-Pad\\Distributed One-Time Pad\\Distributed One-Time Pad\\obj\\",
+        "outputPath": "C:\\code\\Distributed-One-Time-Pad\\Distributed One-Time Pad\\Distributed One-Time Pad\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ryanm\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -39,6 +39,12 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[17.3.2, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -55,7 +61,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -105,3 +105,5 @@ C:\Code\Distributed-One-Time-Pad\Distributed One-Time Pad\OneTimePadUnitTests\ob
 C:\Code\Distributed-One-Time-Pad\Distributed One-Time Pad\OneTimePadUnitTests\obj\Debug\net6.0\OneTimePadUnitTests.pdb
 C:\Code\Distributed-One-Time-Pad\Distributed One-Time Pad\OneTimePadUnitTests\obj\Debug\net6.0\OneTimePadUnitTests.genruntimeconfig.cache
 C:\Code\Distributed-One-Time-Pad\Distributed One-Time Pad\OneTimePadUnitTests\obj\Debug\net6.0\ref\OneTimePadUnitTests.dll
+C:\code\Distributed-One-Time-Pad\Distributed One-Time Pad\OneTimePadUnitTests\bin\Debug\net6.0\OneTimePadDLL.deps.json
+C:\code\Distributed-One-Time-Pad\Distributed One-Time Pad\OneTimePadUnitTests\bin\Debug\net6.0\OneTimePadDLL.runtimeconfig.json

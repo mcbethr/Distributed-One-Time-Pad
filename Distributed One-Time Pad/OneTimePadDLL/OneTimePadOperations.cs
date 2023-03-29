@@ -2,8 +2,8 @@
 {
     public class OneTimePadOperations
     {
-
-        private readonly char[] CharacterLibrary = new char[37];
+        static int MaxLength = 38;
+        private readonly char[] CharacterLibrary = new char[MaxLength];
 
         /// <summary>
         /// In the future we should use Hexidecimal
@@ -47,6 +47,7 @@
             CharacterLibrary[34] = 'X';
             CharacterLibrary[35] = 'Y';
             CharacterLibrary[36] = 'Z';
+            CharacterLibrary[37] = ' ';
 
 
         }
@@ -121,7 +122,7 @@
                 }
                 else
                 {
-                    CypherPointer = 37;
+                    CypherPointer = MaxLength;
                 }
             }
             return CharacterLibrary[CypherPointer];

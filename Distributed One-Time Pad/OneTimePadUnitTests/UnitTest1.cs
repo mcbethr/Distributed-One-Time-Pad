@@ -21,7 +21,7 @@ namespace OneTimePadUnitTests
         public void CheckCypherShift27FromAEncryption() {
 
             OneTimePadOperations OTPO = new OneTimePadOperations();
-            char CypherShift = OTPO.PerformCypherShiftEncryption('A',27);
+            char CypherShift = OTPO.PerformCypherShiftEncryption('B',27);
             Assert.AreEqual('.', CypherShift);
 
         }
@@ -41,7 +41,7 @@ namespace OneTimePadUnitTests
 
             OneTimePadOperations OTPO = new OneTimePadOperations();
             int CypherShift = OTPO.PerformCypherShiftDecryption('.',27);
-            Assert.AreEqual('A', CypherShift);
+            Assert.AreEqual('B', CypherShift);
 
         }
 

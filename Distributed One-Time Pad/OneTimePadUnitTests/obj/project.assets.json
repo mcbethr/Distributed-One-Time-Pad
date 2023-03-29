@@ -1905,6 +1905,9 @@
       "Distributed One-Time Pad/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Microsoft.NET.Test.Sdk": "17.3.2"
+        },
         "compile": {
           "bin/placeholder/Distributed One-Time Pad.dll": {}
         },
@@ -1915,6 +1918,9 @@
       "OneTimePadDLL/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Microsoft.NET.Test.Sdk": "17.3.2"
+        },
         "compile": {
           "bin/placeholder/OneTimePadDLL.dll": {}
         },
@@ -6809,11 +6815,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Code\\Distributed-One-Time-Pad\\Distributed One-Time Pad\\OneTimePadUnitTests\\OneTimePadUnitTests.csproj",
+      "projectUniqueName": "C:\\code\\Distributed-One-Time-Pad\\Distributed One-Time Pad\\OneTimePadUnitTests\\OneTimePadUnitTests.csproj",
       "projectName": "OneTimePadUnitTests",
-      "projectPath": "C:\\Code\\Distributed-One-Time-Pad\\Distributed One-Time Pad\\OneTimePadUnitTests\\OneTimePadUnitTests.csproj",
+      "projectPath": "C:\\code\\Distributed-One-Time-Pad\\Distributed One-Time Pad\\OneTimePadUnitTests\\OneTimePadUnitTests.csproj",
       "packagesPath": "C:\\Users\\ryanm\\.nuget\\packages\\",
-      "outputPath": "C:\\Code\\Distributed-One-Time-Pad\\Distributed One-Time Pad\\OneTimePadUnitTests\\obj\\",
+      "outputPath": "C:\\code\\Distributed-One-Time-Pad\\Distributed One-Time Pad\\OneTimePadUnitTests\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\ryanm\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -6830,11 +6836,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Code\\Distributed-One-Time-Pad\\Distributed One-Time Pad\\Distributed One-Time Pad\\Distributed One-Time Pad.csproj": {
-              "projectPath": "C:\\Code\\Distributed-One-Time-Pad\\Distributed One-Time Pad\\Distributed One-Time Pad\\Distributed One-Time Pad.csproj"
+            "C:\\code\\Distributed-One-Time-Pad\\Distributed One-Time Pad\\Distributed One-Time Pad\\Distributed One-Time Pad.csproj": {
+              "projectPath": "C:\\code\\Distributed-One-Time-Pad\\Distributed One-Time Pad\\Distributed One-Time Pad\\Distributed One-Time Pad.csproj"
             },
-            "C:\\Code\\Distributed-One-Time-Pad\\Distributed One-Time Pad\\OneTimePadDLL\\OneTimePadDLL.csproj": {
-              "projectPath": "C:\\Code\\Distributed-One-Time-Pad\\Distributed One-Time Pad\\OneTimePadDLL\\OneTimePadDLL.csproj"
+            "C:\\code\\Distributed-One-Time-Pad\\Distributed One-Time Pad\\OneTimePadDLL\\OneTimePadDLL.csproj": {
+              "projectPath": "C:\\code\\Distributed-One-Time-Pad\\Distributed One-Time Pad\\OneTimePadDLL\\OneTimePadDLL.csproj"
             }
           }
         }
@@ -6882,7 +6888,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
       }
     }
   }
