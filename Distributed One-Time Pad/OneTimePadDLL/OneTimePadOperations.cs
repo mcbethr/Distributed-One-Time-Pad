@@ -1,8 +1,11 @@
-﻿namespace OneTimePadDLL
+﻿using System.Security.Cryptography;
+
+namespace OneTimePadDLL
 {
     public class OneTimePadOperations
     {
         static int MaxLength = 38;
+        const int MaxNumberOfCharacters = 500;
         private readonly char[] CharacterLibrary = new char[MaxLength];
 
         /// <summary>
@@ -126,6 +129,32 @@
                 }
             }
             return CharacterLibrary[CypherPointer];
+
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="MaxCharacters">Optional Max Number of characters to generate. Defaults to 500</param>
+        public int[] GenerateKey(int MaxCharacters = MaxNumberOfCharacters)
+        {
+
+            int[] Key = new int[MaxCharacters];
+
+            for (int i= 0; i < MaxCharacters; i++)
+            {
+
+                //https://code-maze.com/csharp-random-double-range/
+                using (var generator = RandomNumberGenerator.Create())
+                {
+                    var salt = new byte[4];
+                    generator.GetBytes(salt);
+                    Key[i] = Math.Abs(BitConverter.ToInt32(salt));
+                }
+
+            }
+
+            return Key;
 
         }
 

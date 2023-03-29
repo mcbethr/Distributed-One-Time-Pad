@@ -3,7 +3,7 @@ using OneTimePadDLL;
 namespace OneTimePadUnitTests
 {
     [TestClass]
-    public class UnitTest1
+    public class UnitTests
     {
         
         [TestMethod]
@@ -58,6 +58,22 @@ namespace OneTimePadUnitTests
             Assert.AreEqual("DCW", cyphertext);
 
         }
-  
+
+        [TestMethod]
+        public void GenerateKeyDefault()
+        {
+            OneTimePadOperations OTPO = new OneTimePadOperations();
+            int[] Key = OTPO.GenerateKey();
+            Assert.AreEqual(500, Key.Length);
+        }
+
+        [TestMethod]
+        public void GenerateKey1000()
+        {
+            OneTimePadOperations OTPO = new OneTimePadOperations();
+            int[] Key = OTPO.GenerateKey(1000);
+            Assert.AreEqual(1000, Key.Length);
+        }
+
     }
 }
