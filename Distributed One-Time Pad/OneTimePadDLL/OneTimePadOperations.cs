@@ -1,4 +1,5 @@
-﻿using System.Security.Cryptography;
+﻿using System.ComponentModel;
+using System.Security.Cryptography;
 using System.Text.Json;
 
 namespace OneTimePadDLL
@@ -56,9 +57,9 @@ namespace OneTimePadDLL
 
         }
 
-        public string? EncryptMessage(string message, int[] ShiftArray)
+        public string EncryptMessage(string message, int[] ShiftArray)
         {
-            string? cypherText = null;
+            string cypherText = string.Empty;
             int i = 0;
             foreach (char c in message)
             {
@@ -162,7 +163,9 @@ namespace OneTimePadDLL
         public OneTimePad GeneratePad(int SeriesNumber, int MaxCharacters)
         {
 
-            OneTimePad Pad = new OneTimePad(SeriesNumber,GenerateKey(MaxCharacters));
+            OneTimePad Pad = new OneTimePad();
+            Pad.PadSeriesNumber = SeriesNumber;
+            Pad.PadKey = GenerateKey(MaxCharacters);
 
             return Pad;
 

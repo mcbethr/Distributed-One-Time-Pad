@@ -9,15 +9,8 @@ namespace OneTimePadDLL
     public class OneTimePad
     {
 
-        public int PadSeriesNumber { get;}
-        public int[] PadKey { get; }
-
-        public OneTimePad(int _PadSeriesNumber, int[] _Padkey)
-        {
-            PadKey = _Padkey;
-            PadSeriesNumber = _PadSeriesNumber;
-        }
-
+        public int PadSeriesNumber { get; set; }
+        public int[]? PadKey { get; set; }
 
     }
 

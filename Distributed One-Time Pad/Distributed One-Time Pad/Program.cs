@@ -42,18 +42,58 @@ switch (args[0])
 void EncryptFile()
 {
 
-    string keyfile;
-    int MaxCharacters;
-    int Series;
+    string Keyfile;
+    string Outputfile;
+    string InputFile;
+    string message = string.Empty;
 
     if (String.IsNullOrEmpty(config["key"]))
     {
         Console.WriteLine("Use --key to designate a keyfile. No key? Use generate to generate a key");
+        return;
     }
     else
     {
-        keyfile = Convert.ToString(config["key"]!);
+        Keyfile = Convert.ToString(config["key"]!);
+
     }
+
+    if (String.IsNullOrEmpty(config["outputfile"]))
+    {
+        Outputfile = "encryptedMessage.txt";
+    }
+    else
+    {
+        //https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/compiler-messages/nullable-warnings#possible-dereference-of-null
+        Outputfile = Convert.ToString(config["outputfile"]!);
+    }
+
+    if (String.IsNullOrEmpty(config["inputfile"]))
+    {
+        //if there is no file, just assume that the last item in the array is the message.
+        //TODO Fix this
+        message = args[args.Length-1];
+        InputFile = string.Empty;
+    }
+    else
+    {
+        //https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/compiler-messages/nullable-warnings#possible-dereference-of-null
+        InputFile = Convert.ToString(config["inputfile"]!);
+        message = File.ReadAllText(InputFile);
+    }
+
+
+    OneTimePadOperations oneTimePadOperations = new OneTimePadOperations();
+    
+    string jsonString = File.ReadAllText(Keyfile);
+    OneTimePad OTP = JsonSerializer.Deserialize<OneTimePad>(jsonString)!;
+
+
+    string? EncryptedMessage = oneTimePadOperations.EncryptMessage(message, OTP.PadKey);
+
+    File.WriteAllText(Outputfile, EncryptedMessage);
+
+
 }
 
 void GenerateKey() {
@@ -62,14 +102,14 @@ void GenerateKey() {
     int MaxCharacters;
     int Series;
 
-    if (String.IsNullOrEmpty(config["outputfile"]))
+    if (String.IsNullOrEmpty(config["key"]))
     {
-        Outputfile = "OTPKey.txt";
+        Outputfile = "key.json";
     }
     else
     {
         //https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/compiler-messages/nullable-warnings#possible-dereference-of-null
-        Outputfile = Convert.ToString(config["outputfile"]!);
+        Outputfile = Convert.ToString(config["key"]!);
     }
 
     if (String.IsNullOrEmpty(config["size"]))

@@ -2,7 +2,7 @@
   "profiles": {
     "Distributed One-Time Pad": {
       "commandName": "Project",
-      "commandLineArgs": "generate --series 2"
+      "commandLineArgs": "encrypt --key key.json --inputfile message.txt "
     }
   }
 }
