@@ -5,12 +5,8 @@ C:\Code\Distributed-One-Time-Pad\Distributed One-Time Pad\OneTimePadUnitTests\ob
 C:\Code\Distributed-One-Time-Pad\Distributed One-Time Pad\OneTimePadUnitTests\obj\Debug\net6.0\OneTimePadUnitTests.AssemblyInfo.cs
 C:\Code\Distributed-One-Time-Pad\Distributed One-Time Pad\OneTimePadUnitTests\obj\Debug\net6.0\OneTimePadUnitTests.csproj.CoreCompileInputs.cache
 C:\Code\Distributed-One-Time-Pad\Distributed One-Time Pad\OneTimePadUnitTests\bin\Debug\net6.0\testhost.dll
-C:\Code\Distributed-One-Time-Pad\Distributed One-Time Pad\OneTimePadUnitTests\bin\Debug\net6.0\Distributed One-Time Pad.deps.json
-C:\Code\Distributed-One-Time-Pad\Distributed One-Time Pad\OneTimePadUnitTests\bin\Debug\net6.0\Distributed One-Time Pad.runtimeconfig.json
-C:\Code\Distributed-One-Time-Pad\Distributed One-Time Pad\OneTimePadUnitTests\bin\Debug\net6.0\Distributed One-Time Pad.exe
 C:\Code\Distributed-One-Time-Pad\Distributed One-Time Pad\OneTimePadUnitTests\bin\Debug\net6.0\testhost.exe
 C:\Code\Distributed-One-Time-Pad\Distributed One-Time Pad\OneTimePadUnitTests\bin\Debug\net6.0\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
-C:\Code\Distributed-One-Time-Pad\Distributed One-Time Pad\OneTimePadUnitTests\bin\Debug\net6.0\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
 C:\Code\Distributed-One-Time-Pad\Distributed One-Time Pad\OneTimePadUnitTests\bin\Debug\net6.0\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
 C:\Code\Distributed-One-Time-Pad\Distributed One-Time Pad\OneTimePadUnitTests\bin\Debug\net6.0\Microsoft.TestPlatform.AdapterUtilities.dll
 C:\Code\Distributed-One-Time-Pad\Distributed One-Time Pad\OneTimePadUnitTests\bin\Debug\net6.0\OneTimePadUnitTests.deps.json
@@ -93,10 +89,8 @@ C:\Code\Distributed-One-Time-Pad\Distributed One-Time Pad\OneTimePadUnitTests\bi
 C:\Code\Distributed-One-Time-Pad\Distributed One-Time Pad\OneTimePadUnitTests\bin\Debug\net6.0\zh-Hant\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
 C:\Code\Distributed-One-Time-Pad\Distributed One-Time Pad\OneTimePadUnitTests\bin\Debug\net6.0\zh-Hant\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
 C:\Code\Distributed-One-Time-Pad\Distributed One-Time Pad\OneTimePadUnitTests\bin\Debug\net6.0\zh-Hant\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
-C:\Code\Distributed-One-Time-Pad\Distributed One-Time Pad\OneTimePadUnitTests\bin\Debug\net6.0\Distributed One-Time Pad.dll
 C:\Code\Distributed-One-Time-Pad\Distributed One-Time Pad\OneTimePadUnitTests\bin\Debug\net6.0\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
 C:\Code\Distributed-One-Time-Pad\Distributed One-Time Pad\OneTimePadUnitTests\bin\Debug\net6.0\OneTimePadDLL.dll
-C:\Code\Distributed-One-Time-Pad\Distributed One-Time Pad\OneTimePadUnitTests\bin\Debug\net6.0\Distributed One-Time Pad.pdb
 C:\Code\Distributed-One-Time-Pad\Distributed One-Time Pad\OneTimePadUnitTests\bin\Debug\net6.0\OneTimePadDLL.pdb
 C:\Code\Distributed-One-Time-Pad\Distributed One-Time Pad\OneTimePadUnitTests\bin\Debug\net6.0\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
 C:\Code\Distributed-One-Time-Pad\Distributed One-Time Pad\OneTimePadUnitTests\obj\Debug\net6.0\OneTimePadUnitTests.csproj.CopyComplete
@@ -107,3 +101,25 @@ C:\Code\Distributed-One-Time-Pad\Distributed One-Time Pad\OneTimePadUnitTests\ob
 C:\Code\Distributed-One-Time-Pad\Distributed One-Time Pad\OneTimePadUnitTests\obj\Debug\net6.0\ref\OneTimePadUnitTests.dll
 C:\code\Distributed-One-Time-Pad\Distributed One-Time Pad\OneTimePadUnitTests\bin\Debug\net6.0\OneTimePadDLL.deps.json
 C:\code\Distributed-One-Time-Pad\Distributed One-Time Pad\OneTimePadUnitTests\bin\Debug\net6.0\OneTimePadDLL.runtimeconfig.json
+C:\code\Distributed-One-Time-Pad\Distributed One-Time Pad\OneTimePadUnitTests\bin\Debug\net6.0\cs\Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
+C:\code\Distributed-One-Time-Pad\Distributed One-Time Pad\OneTimePadUnitTests\bin\Debug\net6.0\de\Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
+C:\code\Distributed-One-Time-Pad\Distributed One-Time Pad\OneTimePadUnitTests\bin\Debug\net6.0\es\Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
+C:\code\Distributed-One-Time-Pad\Distributed One-Time Pad\OneTimePadUnitTests\bin\Debug\net6.0\fr\Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
+C:\code\Distributed-One-Time-Pad\Distributed One-Time Pad\OneTimePadUnitTests\bin\Debug\net6.0\it\Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
+C:\code\Distributed-One-Time-Pad\Distributed One-Time Pad\OneTimePadUnitTests\bin\Debug\net6.0\ja\Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
+C:\code\Distributed-One-Time-Pad\Distributed One-Time Pad\OneTimePadUnitTests\bin\Debug\net6.0\ko\Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
+C:\code\Distributed-One-Time-Pad\Distributed One-Time Pad\OneTimePadUnitTests\bin\Debug\net6.0\pl\Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
+C:\code\Distributed-One-Time-Pad\Distributed One-Time Pad\OneTimePadUnitTests\bin\Debug\net6.0\pt-BR\Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
+C:\code\Distributed-One-Time-Pad\Distributed One-Time Pad\OneTimePadUnitTests\bin\Debug\net6.0\ru\Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
+C:\code\Distributed-One-Time-Pad\Distributed One-Time Pad\OneTimePadUnitTests\bin\Debug\net6.0\tr\Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
+C:\code\Distributed-One-Time-Pad\Distributed One-Time Pad\OneTimePadUnitTests\bin\Debug\net6.0\zh-Hans\Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
+C:\code\Distributed-One-Time-Pad\Distributed One-Time Pad\OneTimePadUnitTests\bin\Debug\net6.0\zh-Hant\Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
+C:\code\Distributed-One-Time-Pad\Distributed One-Time Pad\OneTimePadUnitTests\bin\Debug\net6.0\Microsoft.Extensions.Configuration.dll
+C:\code\Distributed-One-Time-Pad\Distributed One-Time Pad\OneTimePadUnitTests\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\code\Distributed-One-Time-Pad\Distributed One-Time Pad\OneTimePadUnitTests\bin\Debug\net6.0\Microsoft.Extensions.Configuration.CommandLine.dll
+C:\code\Distributed-One-Time-Pad\Distributed One-Time Pad\OneTimePadUnitTests\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll
+C:\code\Distributed-One-Time-Pad\Distributed One-Time Pad\OneTimePadUnitTests\bin\Debug\net6.0\OTP.deps.json
+C:\code\Distributed-One-Time-Pad\Distributed One-Time Pad\OneTimePadUnitTests\bin\Debug\net6.0\OTP.runtimeconfig.json
+C:\code\Distributed-One-Time-Pad\Distributed One-Time Pad\OneTimePadUnitTests\bin\Debug\net6.0\OTP.exe
+C:\code\Distributed-One-Time-Pad\Distributed One-Time Pad\OneTimePadUnitTests\bin\Debug\net6.0\OTP.dll
+C:\code\Distributed-One-Time-Pad\Distributed One-Time Pad\OneTimePadUnitTests\bin\Debug\net6.0\OTP.pdb

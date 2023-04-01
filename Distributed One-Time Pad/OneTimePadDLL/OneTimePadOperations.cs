@@ -1,11 +1,12 @@
 ﻿using System.Security.Cryptography;
+using System.Text.Json;
 
 namespace OneTimePadDLL
 {
     public class OneTimePadOperations
     {
         static int MaxLength = 38;
-        const int MaxNumberOfCharacters = 500;
+        public const int MaxNumberOfCharacters = 500;
         private readonly char[] CharacterLibrary = new char[MaxLength];
 
         /// <summary>
@@ -158,5 +159,25 @@ namespace OneTimePadDLL
 
         }
 
+        public OneTimePad GeneratePad(int SeriesNumber, int MaxCharacters)
+        {
+
+            OneTimePad Pad = new OneTimePad(SeriesNumber,GenerateKey(MaxCharacters));
+
+            return Pad;
+
+        }
+
+        public void SavePad(string filename,int series, int MaxCharacters)
+        {
+            OneTimePadOperations OTPO = new OneTimePadOperations();
+
+            OneTimePad Pad = OTPO.GeneratePad(series, MaxCharacters);
+            string jsonString = JsonSerializer.Serialize(Pad);
+            File.WriteAllText(filename, jsonString);
+        }
+        
     }
+
+
 }

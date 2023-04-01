@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Distributed One-Time Pad": {
+      "commandName": "Project",
+      "commandLineArgs": "generate --series 2"
+    }
+  }
+}

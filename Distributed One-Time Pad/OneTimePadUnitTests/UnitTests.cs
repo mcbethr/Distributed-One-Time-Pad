@@ -46,7 +46,7 @@ namespace OneTimePadUnitTests
         }
 
         [TestMethod]
-        public void EncryptTextString()
+        public void TestEncryptTextString()
         {
             string ToEncrypt = "CAT";  //Should Change CAT to DCW
             
@@ -60,7 +60,7 @@ namespace OneTimePadUnitTests
         }
 
         [TestMethod]
-        public void GenerateKeyDefault()
+        public void TestGenerateKeyDefault()
         {
             OneTimePadOperations OTPO = new OneTimePadOperations();
             int[] Key = OTPO.GenerateKey();
@@ -68,12 +68,14 @@ namespace OneTimePadUnitTests
         }
 
         [TestMethod]
-        public void GenerateKey1000()
+        public void TestGenerateKey1000()
         {
             OneTimePadOperations OTPO = new OneTimePadOperations();
             int[] Key = OTPO.GenerateKey(1000);
             Assert.AreEqual(1000, Key.Length);
         }
+
+
 
     }
 }
