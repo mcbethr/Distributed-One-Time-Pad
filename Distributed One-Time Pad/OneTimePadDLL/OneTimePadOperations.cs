@@ -71,7 +71,20 @@ namespace OneTimePadDLL
             return cypherText;
         }
 
-        //public string DecryptMessage
+        public string DecryptMessage(string message, int[] ShiftArray)
+        {
+            string Message = string.Empty;
+            int i = 0;
+            foreach (char c in message)
+            {
+                char DecryptedText = DecryptCypher(c, ShiftArray[i]);
+                Message = Message + DecryptedText;
+                i++;
+            }
+
+            return Message;
+        }
+
 
         public char EnryptCypher(char TextToEncrypt, int AmountToShift)
         {
@@ -83,6 +96,15 @@ namespace OneTimePadDLL
 
         }
 
+        public char DecryptCypher(char TextToDecrypt, int AmountToShift)
+        {
+            char CypherText = PerformCypherShiftDecryption(TextToDecrypt, AmountToShift);
+
+
+
+            return CypherText;
+
+        }
 
 
         /// <summary>

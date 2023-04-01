@@ -33,11 +33,70 @@ switch (args[0])
             break;
         }
 
+    case "decrypt":
+        {
+            DecryptFile();
+            break;
+        }
+
     default:
         Console.WriteLine("Syntax is OTP Generate/encrypt/decrypt outputfile size series");
         break;
 
 }
+
+void DecryptFile()
+{
+    string Keyfile;
+    string Outputfile;
+    string InputFile;
+    string message = string.Empty;
+
+    if (String.IsNullOrEmpty(config["key"]))
+    {
+        Console.WriteLine("A key must be used to decryot");
+        return;
+    }
+    else
+    {
+        Keyfile = Convert.ToString(config["key"]!);
+    }
+
+    if (String.IsNullOrEmpty(config["outputfile"]))
+    {
+        Outputfile = "decryryptedMessage.txt";
+    }
+    else
+    {
+        //https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/compiler-messages/nullable-warnings#possible-dereference-of-null
+        Outputfile = Convert.ToString(config["outputfile"]!);
+    }
+
+    if (String.IsNullOrEmpty(config["inputfile"]))
+    {
+        //if there is no input file, we can't decrypt
+        Console.WriteLine("Cannont decript without an input file use --input to select a file.");
+    }
+    else
+    {
+        //https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/compiler-messages/nullable-warnings#possible-dereference-of-null
+        InputFile = Convert.ToString(config["inputfile"]!);
+        message = File.ReadAllText(InputFile);
+    }
+
+    OneTimePadOperations oneTimePadOperations = new OneTimePadOperations();
+
+    string jsonString = File.ReadAllText(Keyfile);
+    OneTimePad OTP = JsonSerializer.Deserialize<OneTimePad>(jsonString)!;
+
+
+    string? DecryptedMessage = oneTimePadOperations.DecryptMessage(message, OTP.PadKey);
+    Console.WriteLine(DecryptedMessage);
+    File.WriteAllText(Outputfile, DecryptedMessage);
+
+}
+
+
 
 void EncryptFile()
 {
