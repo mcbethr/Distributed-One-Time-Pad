@@ -160,7 +160,7 @@ namespace OneTimePadDLL
         /// 
         /// </summary>
         /// <param name="MaxCharacters">Optional Max Number of characters to generate. Defaults to 500</param>
-        public int[] GenerateKey(int MaxCharacters = MaxNumberOfCharacters)
+        public int[] GenerateKey(int MaxCharacters = MaxNumberOfCharacters, byte[] ImageKey = null)
         {
 
             int[] Key = new int[MaxCharacters];
@@ -182,12 +182,23 @@ namespace OneTimePadDLL
 
         }
 
-        public OneTimePad GeneratePad(int SeriesNumber, int MaxCharacters)
+        public OneTimePad GeneratePad(int SeriesNumber, int MaxCharacters, byte[]? ImageKey = null)
         {
 
             OneTimePad Pad = new OneTimePad();
             Pad.PadSeriesNumber = SeriesNumber;
-            Pad.PadKey = GenerateKey(MaxCharacters);
+            byte[] Key = new byte[MaxCharacters];
+
+            if (ImageKey == null)
+            {
+                Pad.PadKey = GenerateKey(MaxCharacters);
+            }
+            else
+            {
+           
+                Array.Copy(ImageKey, Key, MaxCharacters);
+                Pad.PadKey = Array.ConvertAll(Key, c => (int)c);
+            }
 
             return Pad;
 

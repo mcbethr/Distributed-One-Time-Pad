@@ -105,6 +105,7 @@ void EncryptFile()
     string Outputfile;
     string InputFile;
     string message = string.Empty;
+    
 
     if (String.IsNullOrEmpty(config["key"]))
     {
@@ -160,6 +161,8 @@ void GenerateKey() {
     string Outputfile;
     int MaxCharacters;
     int Series;
+    string image;
+    byte[]? ImageKey = null;
 
     if (String.IsNullOrEmpty(config["key"]))
     {
@@ -190,8 +193,21 @@ void GenerateKey() {
         Series = Convert.ToInt32(config["series"]!);
     }
 
+
+    //Grab the image for the file
+    if (String.IsNullOrEmpty(config["image"]))
+    {
+        image = string.Empty;
+    }
+    else
+    {
+        image = Convert.ToString(config["image"]!);
+        ImageKey = File.ReadAllBytes(image);
+    }
+
+
     OneTimePadOperations oneTimePadOperations = new OneTimePadOperations();
-    OneTimePad OTP = oneTimePadOperations.GeneratePad(Series, MaxCharacters);
+    OneTimePad OTP = oneTimePadOperations.GeneratePad(Series, MaxCharacters, ImageKey);
 
     string jsonString = JsonSerializer.Serialize(OTP);
     File.WriteAllText(Outputfile, jsonString);
