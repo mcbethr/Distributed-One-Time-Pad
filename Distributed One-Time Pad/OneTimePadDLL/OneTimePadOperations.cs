@@ -125,6 +125,12 @@ namespace OneTimePadDLL
                     if (CypherPointer < CharacterLibrary.Length)
                     {
                         CypherPointer++;
+                        //We need to account for a use case where CypherPointer is 38
+                        //This will only happen when shifting 1 on the last letter.
+                        if (CypherPointer==38)
+                          {
+                             CypherPointer = 0;
+                          }
                     }
                     else
                     {
@@ -136,7 +142,7 @@ namespace OneTimePadDLL
 
         public char PerformCypherShiftDecryption(char StartingCharacter, int AmountToShift)
         {
-
+                
             int StartingCharacterLocation = Array.IndexOf(CharacterLibrary, StartingCharacter);
 
             int CypherPointer = StartingCharacterLocation;
@@ -145,11 +151,13 @@ namespace OneTimePadDLL
             {
                 if (CypherPointer > 0)
                 {
+
                     CypherPointer--;
+                    
                 }
                 else
                 {
-                    CypherPointer = MaxLength;
+                    CypherPointer = MaxLength-1;
                 }
             }
             return CharacterLibrary[CypherPointer];
@@ -173,7 +181,12 @@ namespace OneTimePadDLL
                 {
                     var salt = new byte[4];
                     generator.GetBytes(salt);
-                    Key[i] = Math.Abs(BitConverter.ToInt32(salt));
+                    int Value = Math.Abs(BitConverter.ToInt32(salt));
+
+                    ///Make this a little faster with Mod
+                    //Value = Value % MaxCharacters;
+
+                    Key[i] = Value;
                 }
 
             }

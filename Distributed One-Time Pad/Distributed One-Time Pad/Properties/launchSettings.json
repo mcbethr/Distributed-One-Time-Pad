@@ -2,7 +2,7 @@
   "profiles": {
     "Distributed One-Time Pad": {
       "commandName": "Project",
-      "commandLineArgs": "decrypt --key key.json --inputfile EncryptedMessage.txt --outputfile DecryptedMessage.txt"
+      "commandLineArgs": "decrypt --inputfile output.txt --key key.json --outputfile decrypted.txt"
     }
   }
 }
