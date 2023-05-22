@@ -1,60 +1,155 @@
-﻿using System.ComponentModel;
+﻿using System.Collections.Generic;
+using System.ComponentModel;
 using System.Security.Cryptography;
 using System.Text.Json;
+using System.Linq;
+using System.Xml.Linq;
+using static OneTimePadDLL.OneTimePadOperations;
+using System.Threading.Channels;
 
 namespace OneTimePadDLL
 {
     public class OneTimePadOperations
     {
-        static int MaxLength = 38;
         public const int MaxNumberOfCharacters = 500;
-        private readonly char[] CharacterLibrary = new char[MaxLength];
+        public DoublyLinkedList<string> ASCIILibrary { get; }
 
         /// <summary>
         /// In the future we should use Hexidecimal
         /// </summary>
         public OneTimePadOperations()
         {
-            CharacterLibrary[0] = '.';
-            CharacterLibrary[1] = '1';
-            CharacterLibrary[2] = '2';
-            CharacterLibrary[3] = '3';
-            CharacterLibrary[4] = '4';
-            CharacterLibrary[5] = '5';
-            CharacterLibrary[6] = '6';
-            CharacterLibrary[7] = '7';
-            CharacterLibrary[8] = '8';
-            CharacterLibrary[9] = '9';
-            CharacterLibrary[10] = '0';
-            CharacterLibrary[11] = 'A';
-            CharacterLibrary[12] = 'B';
-            CharacterLibrary[13] = 'C';
-            CharacterLibrary[14] = 'D';
-            CharacterLibrary[15] = 'E';
-            CharacterLibrary[16] = 'F';
-            CharacterLibrary[17] = 'G';
-            CharacterLibrary[18] = 'H';
-            CharacterLibrary[19] = 'I';
-            CharacterLibrary[20] = 'J';
-            CharacterLibrary[21] = 'K';
-            CharacterLibrary[22] = 'L';
-            CharacterLibrary[23] = 'M';
-            CharacterLibrary[24] = 'N';
-            CharacterLibrary[25] = 'O';
-            CharacterLibrary[26] = 'P';
-            CharacterLibrary[27] = 'Q';
-            CharacterLibrary[28] = 'R';
-            CharacterLibrary[29] = 'S';
-            CharacterLibrary[30] = 'T';
-            CharacterLibrary[31] = 'U';
-            CharacterLibrary[32] = 'V';
-            CharacterLibrary[33] = 'W';
-            CharacterLibrary[34] = 'X';
-            CharacterLibrary[35] = 'Y';
-            CharacterLibrary[36] = 'Z';
-            CharacterLibrary[37] = ' ';
+
+            ///Create the linked list for the program
+            ASCIILibrary = CreateAlphabetLinkedList();
+
+        }
 
 
+        public class DoublyLinkedListNode<T>
+        {
+            public T Value { get; set; }
+            public DoublyLinkedListNode<T>? Previous { get; set; }
+            public DoublyLinkedListNode<T>? Next { get; set; }
+
+            public DoublyLinkedListNode(T value)
+            {
+                Value = value;
+                Previous = null;
+                Next = null;
+            }
+
+
+        }
+
+        public class DoublyLinkedList<T>
+        {
+            public DoublyLinkedListNode<T>? Head { get; set; }
+            public DoublyLinkedListNode<T>? Tail { get; set; }
+
+            public void AddLast(T value)
+            {
+                DoublyLinkedListNode<T> newNode = new DoublyLinkedListNode<T>(value);
+
+                if (Head == null)
+                {
+                    Head = newNode;
+                    Tail = newNode;
+                }
+                else
+                {
+                    Tail.Next = newNode;
+                    newNode.Previous = Tail;
+                    Tail = newNode;
+                }
+            }
+
+            public void CloseLoop()
+            {
+                Tail.Next = Head;
+            }
+
+            private DoublyLinkedListNode<T> Find(char character)
+            {
+                DoublyLinkedListNode<T> currentNode = Head;
+                while (currentNode != null)
+                {
+                    string nodeValue = currentNode.Value.ToString();
+                    if (nodeValue.Contains(character))
+                    {
+                        return currentNode;
+                    }
+                    currentNode = currentNode.Next;
+                }
+
+                return null; // Character not found in the linked list
+            }
+
+            public char RetreatNodes(char Character, int n)
+            {
+
+
+                DoublyLinkedListNode<T> currentNode = Find(Character);
+                for (int i = 0; i < n; i++)
+                {
+
+
+
+                    currentNode = currentNode.Previous;
+                }
+
+                Tail = currentNode;
+                return Convert.ToChar(Head.Value);
+            }
+
+            public char AdvanceNodes(char Character, int n)
+            {
+
+
+                DoublyLinkedListNode<T> currentNode = Find(Character);
+                for (int i = 0; i < n; i++)
+                {
+
+
+
+                    currentNode = currentNode.Next;
+                }
+
+                Head = currentNode;
+                return Convert.ToChar(Head.Value);
+            }
+
+
+        }
+
+        public DoublyLinkedList<string> CreateAlphabetLinkedList()
+        {
+            DoublyLinkedList<string> linkedList = new DoublyLinkedList<string>();
+
+            for (char c = 'A'; c <= 'Z'; c++)
+            {
+                linkedList.AddLast(c.ToString());
+            }
+
+            for (char c = 'a'; c <= 'z'; c++)
+            {
+                linkedList.AddLast(c.ToString());
+            }
+
+            for (char c = '0'; c <= '9'; c++)
+            {
+                linkedList.AddLast(c.ToString());
+            }
+
+            string punctuationMarks = "!@#$%^&*()-_=+[{]};:'\",<.>/?";
+            foreach (char c in punctuationMarks)
+            {
+                linkedList.AddLast(c.ToString());
+            }
+
+            linkedList.CloseLoop();
+
+            return linkedList;
         }
 
         public string EncryptMessage(string message, int[] ShiftArray)
@@ -88,7 +183,7 @@ namespace OneTimePadDLL
 
         public char EnryptCypher(char TextToEncrypt, int AmountToShift)
         {
-            char CypherText = PerformCypherShiftEncryption(TextToEncrypt,AmountToShift);
+            char CypherText = PerformCypherShiftEncryptionLL(TextToEncrypt,AmountToShift);
 
 
 
@@ -98,7 +193,7 @@ namespace OneTimePadDLL
 
         public char DecryptCypher(char TextToDecrypt, int AmountToShift)
         {
-            char CypherText = PerformCypherShiftDecryption(TextToDecrypt, AmountToShift);
+            char CypherText = PerformCypherShiftDecryptionLL(TextToDecrypt, AmountToShift);
 
 
 
@@ -106,63 +201,25 @@ namespace OneTimePadDLL
 
         }
 
-
-        /// <summary>
-        /// Performs the Cypher Shift, note that returning anything below 36 is bad and we 
-        /// should throw a note informing the user of the error.  Should limit to stock prices above $100
-        /// </summary>
-        /// <param name="AmountToShift"></param>
-        /// <returns></returns>
-        public char PerformCypherShiftEncryption(char StartingCharacter, int AmountToShift)
+        public char PerformCypherShiftEncryptionLL(char StartingCharacter, int AmountToShift)
         {
 
-               int StartingCharacterLocation = Array.IndexOf(CharacterLibrary, StartingCharacter);
 
-               int CypherPointer = StartingCharacterLocation;
-               
-               for (int i = 0; i < AmountToShift; i++) 
-                {
-                    if (CypherPointer < CharacterLibrary.Length)
-                    {
-                        CypherPointer++;
-                        //We need to account for a use case where CypherPointer is 38
-                        //This will only happen when shifting 1 on the last letter.
-                        if (CypherPointer==38)
-                          {
-                             CypherPointer = 0;
-                          }
-                    }
-                    else
-                    {
-                        CypherPointer = 0;
-                    }
-                }
-            return CharacterLibrary[CypherPointer];
+            char FoundCharacter = ASCIILibrary.AdvanceNodes(StartingCharacter, AmountToShift);
+            return FoundCharacter;
+
         }
 
-        public char PerformCypherShiftDecryption(char StartingCharacter, int AmountToShift)
+        public char PerformCypherShiftDecryptionLL(char StartingCharacter, int AmountToShift)
         {
-                
-            int StartingCharacterLocation = Array.IndexOf(CharacterLibrary, StartingCharacter);
 
-            int CypherPointer = StartingCharacterLocation;
 
-            for (int i = 0; i < AmountToShift; i++)
-            {
-                if (CypherPointer > 0)
-                {
-
-                    CypherPointer--;
-                    
-                }
-                else
-                {
-                    CypherPointer = MaxLength-1;
-                }
-            }
-            return CharacterLibrary[CypherPointer];
+            char FoundCharacter = ASCIILibrary.RetreatNodes(StartingCharacter, AmountToShift);
+            return FoundCharacter;
 
         }
+
+ 
 
         /// <summary>
         /// 
@@ -182,9 +239,6 @@ namespace OneTimePadDLL
                     var salt = new byte[4];
                     generator.GetBytes(salt);
                     int Value = Math.Abs(BitConverter.ToInt32(salt));
-
-                    ///Make this a little faster with Mod
-                    //Value = Value % MaxCharacters;
 
                     Key[i] = Value;
                 }

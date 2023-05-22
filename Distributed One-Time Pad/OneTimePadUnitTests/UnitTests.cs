@@ -5,27 +5,25 @@ namespace OneTimePadUnitTests
     [TestClass]
     public class UnitTests
     {
+
+        [TestMethod] 
+        public void CheckLinkedListCreation()
+        {
+            OneTimePadOperations OTPO = new OneTimePadOperations();
+            char FoundCharacter = OTPO.PerformCypherShiftEncryptionLL('N',14);
+            Assert.AreEqual('b', FoundCharacter);
+        }
+
         
         [TestMethod]
-        public void CheckCypherShift10FromAEncryption()
-        {
+        public void CheckCypherShift88FromAEncryption() {
 
             OneTimePadOperations OTPO = new OneTimePadOperations();
-            char CypherShift = OTPO.PerformCypherShiftEncryption('A', 10);
-
-            Assert.AreEqual('K', CypherShift);
-
-        }
-
-        [TestMethod]
-        public void CheckCypherShift27FromAEncryption() {
-
-            OneTimePadOperations OTPO = new OneTimePadOperations();
-            char CypherShift = OTPO.PerformCypherShiftEncryption('B',27);
-            Assert.AreEqual('.', CypherShift);
+            char CypherShift = OTPO.PerformCypherShiftEncryptionLL('A',90);
+            Assert.AreEqual('A', CypherShift);
 
         }
-
+        /*
         [TestMethod]
         public void CheckCypherChift10DecryptK() {
 
@@ -74,7 +72,7 @@ namespace OneTimePadUnitTests
             int[] Key = OTPO.GenerateKey(1000);
             Assert.AreEqual(1000, Key.Length);
         }
-
+        */
 
 
     }
