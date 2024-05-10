@@ -14,11 +14,18 @@ using System.Net.Security;
 
 Console.WriteLine("Command line Arguments: {0}", args.Length);
 
+if (args.Length < 1)
+{
+    Console.WriteLine("Syntax is OTP Generate/encrypt/decrypt outputfile size series");
+    return;
+}
+
 IConfiguration config = new ConfigurationBuilder()
     .AddCommandLine(args)
     .Build();
 
-switch (args[0])
+
+switch (args[0].ToLower())
 {
     case "generate":
         {
@@ -41,7 +48,7 @@ switch (args[0])
 
     default:
         Console.WriteLine("Syntax is OTP Generate/encrypt/decrypt outputfile size series");
-        break;
+        return;
 
 }
 
@@ -54,7 +61,7 @@ void DecryptFile()
 
     if (String.IsNullOrEmpty(config["key"]))
     {
-        Console.WriteLine("A key must be used to decryot");
+        Console.WriteLine("A key must be used to decrypt");
         return;
     }
     else
